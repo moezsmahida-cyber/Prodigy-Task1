@@ -1,0 +1,28 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset (your correct path)
+df = pd.read_csv("C:/Users/HP/OneDrive/Task1/dataset.csv.txt")
+
+# Show columns
+print("Columns:", df.columns)
+
+# Count values (categorical data)
+counts = df[df.columns[1]].value_counts()
+
+# Print counts (proof)
+print("\nCategory Counts:")
+print(counts)
+
+# Plot bar chart
+counts.plot(kind='bar')
+
+plt.title("Category Distribution")
+plt.xlabel(df.columns[1])
+plt.ylabel("Count")
+
+# Save output
+plt.savefig("bar_chart.png")
+
+# Show graph
+plt.show()

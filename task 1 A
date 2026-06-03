@@ -1,0 +1,26 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset (using your exact file name)
+df = pd.read_csv("C:/Users/HP/OneDrive/Task1/dataset.csv.txt")
+
+# Show dataset (important for proof)
+print("First 5 rows:")
+print(df.head())
+
+# Show column names
+print("\nColumns:")
+print(df.columns)
+
+# Plot histogram (first column)
+plt.hist(df[df.columns[0]], bins=5)
+
+plt.title("Data Distribution")
+plt.xlabel(df.columns[0])
+plt.ylabel("Frequency")
+
+# Save output
+plt.savefig("output.png")
+
+# Show graph
+plt.show()
